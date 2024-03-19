@@ -11,6 +11,7 @@ int main()
 
     serviceInit();
 
+
     while(1){
         tick_1ms = get_tickStatus();//获取1ms标志
         //每1ms间隔进入1次
