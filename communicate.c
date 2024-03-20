@@ -111,7 +111,7 @@ dataPayload_t buildDataPayload(u8 Gyro_ID) // 发送数据帧结构
         localDataPayload.loopOutput = getGyroData(Gyro_ID, RUNTIME_FIELD_CURRENT_FREQUENCY);
         localDataPayload.loopReserved = getGyroData(Gyro_ID, RUNTIME_FIELD_PLL_CURRENT_PHASE);
         localDataPayload.reserved1 = getGyroData(Gyro_ID, RUNTIME_FIELD_WAM_E);     // WAM_E transfer to upper computer
-        localDataPayload.reserved2 = 0;
+        localDataPayload.reserved2 = getGyroData(Gyro_ID, RUNTIME_FIELD_WAM_ANGLE); // WAM_Angle transfer to upper computer
         localDataPayload.reserved3 = 0;
         break;
     }
