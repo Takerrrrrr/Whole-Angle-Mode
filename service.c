@@ -87,11 +87,12 @@ void serviceGyro1(void)
     abstractLoop(&g1_smPidBqConfig);
     // whole angle mode 
     wamEQcalculation(GYRO1);
-    if( g1_smPidEcConfig.loopSource != 0 || g1_smPidQcConfig.loopSource != 0){
-        wamSRoperation(GYRO1);
+    wamSRoperation(GYRO1);
+    wamAngleCalucation(GYRO1);
+    if( g1_smPidEcConfig.loopSource != 0 || g1_smPidQcConfig.loopSource != 0){        
         abstractLoop(&g1_smPidEcConfig);
         abstractLoop(&g1_smPidQcConfig);
-        wamAngleDecomposition(&g1_smPidEcConfig);
+        wamDriveOperation(&g1_smPidEcConfig);
     }
     
     // check hv lock

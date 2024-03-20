@@ -294,5 +294,6 @@ void modeSwitching(modeSwitchingConfig_t *localCfg);
 // } wholeAngleConfig_t;
 void wamEQcalculation(u8 gyroid);
 void wamSRoperation(u8 gyroid);
-void wamAngleDecomposition(loopConfig_t* localCfg);
+void wamDriveOperation(loopConfig_t* localCfg);
+void wamAngleCalucation(u8 gyroid);
 #endif /* SRC_GYRO_H_ */
