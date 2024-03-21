@@ -1012,7 +1012,7 @@ void wamDriveOperation(loopConfig_t* localCfg){
     // double angle_temp = angle_raw / ANGLE_FACTOR;                // angle_temp ∈ (-1,1)
     // s32 angle = (s32)(angle_temp* 90.0 * 1000.0);                // 未标定，向上位机发送显示 （-90°，90°）； 上位机需要除以1000
     // setGyroData(localCfg->gyroid,RUNTIME_FIELD_WAM_ANGLE,angle);
-    double angle_temp=getGyroData(localCfg->gyroid,RUNTIME_FIELD_WAM_ANGLE)/1000/90;
+    double angle_temp=getGyroData(localCfg->gyroid,RUNTIME_FIELD_WAM_ANGLE)/1000.0/90;
     double angle_radians = angle_temp * PI / 2;                  // angle_radians = Θ
     double angle_sin = sin(angle_radians);
     double angle_cos = cos(angle_radians);
